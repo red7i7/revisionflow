@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10131d">
+<title>RevisionFlow — Creative work, under control</title>
+<style>
+:root{--bg:#0d1018;--panel:#151a26;--panel2:#1b2231;--line:#293246;--text:#f3f5fb;--muted:#9aa6bb;--accent:#a78bfa;--cyan:#67e8d2;--yellow:#f6c76b;--red:#fb8290;--green:#7cdda8}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#29234a 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{border-right:1px solid var(--line);padding:26px 18px;background:#10141e;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:11px;font-size:19px;font-weight:800;letter-spacing:-.5px;padding:0 9px 35px}.logo{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--cyan));display:grid;place-items:center;color:#171527;font-weight:900}.navlabel{font-size:10px;color:#6f7c92;font-weight:800;letter-spacing:1.5px;padding:0 11px 10px}.nav button{width:100%;border:0;background:transparent;color:var(--muted);padding:12px 13px;text-align:left;border-radius:10px;margin:2px 0;display:flex;gap:12px;align-items:center}.nav button.active,.nav button:hover{background:#25253a;color:white}.nav .ico{width:19px;text-align:center}.sidebar-foot{margin-top:auto;padding:16px 10px;color:#78849a;font-size:12px;border-top:1px solid var(--line)}main{padding:34px clamp(18px,4vw,54px);max-width:1500px;width:100%;margin:0 auto}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:28px}.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}.top h1{font-size:clamp(26px,4vw,34px);letter-spacing:-1.2px;margin:5px 0}.sub{color:var(--muted);margin:0}.primary{background:linear-gradient(110deg,#b49aff,#8fcbff);color:#141523;border:0;border-radius:10px;padding:11px 16px;font-weight:800;box-shadow:0 7px 24px #9d8af52b}.secondary{background:#242c3d;color:var(--text);border:1px solid #354057;border-radius:9px;padding:9px 13px}.danger{color:#ff9aa4;background:#39232c;border:1px solid #623541;border-radius:8px;padding:7px 10px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.card,.stat{background:linear-gradient(145deg,#191f2d,#141925);border:1px solid var(--line);border-radius:15px}.stat{padding:17px 19px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:29px;letter-spacing:-1px;margin-top:7px}.stat .hint{font-size:11px;color:#7d8ba2;margin-top:3px}.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.8fr);gap:16px}.card{padding:20px}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.cardhead h2{font-size:16px;margin:0}.muted{color:var(--muted)}.project{padding:14px 0;border-top:1px solid #252e40;display:flex;justify-content:space-between;gap:12px;align-items:center}.project:first-of-type{border-top:0}.project-title{font-weight:700}.project-meta{font-size:12px;color:var(--muted);margin-top:4px}.pill{display:inline-flex;align-items:center;border-radius:30px;padding:4px 9px;font-size:11px;font-weight:700;background:#292d43;color:#c8baff;white-space:nowrap}.pill.green{background:#19372f;color:var(--green)}.pill.yellow{background:#3b3323;color:var(--yellow)}.pill.red{background:#3b252e;color:var(--red)}.progress{height:5px;background:#293246;border-radius:5px;margin-top:9px;max-width:210px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--cyan));border-radius:5px}.activity{padding:12px 0;border-top:1px solid #252e40;font-size:13px}.activity:first-of-type{border:0}.activity b{color:#e5e9f4}.activity small{display:block;color:var(--muted);margin-top:3px}.view{display:none}.view.active{display:block}.toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:12px 0 16px;flex-wrap:wrap}.search{background:#171e2c;border:1px solid var(--line);border-radius:9px;color:var(--text);padding:10px 12px;min-width:220px;outline:none}.list{display:grid;gap:10px}.rowitem{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px;background:#171e2c;border:1px solid var(--line);border-radius:12px}.rowitem h3{font-size:14px;margin:0}.rowitem p{font-size:12px;color:var(--muted);margin:4px 0 0}.empty{padding:34px 15px;text-align:center;color:var(--muted);border:1px dashed #354057;border-radius:12px}.empty b{display:block;color:var(--text);margin-bottom:5px}.modal{position:fixed;inset:0;background:#05070bcc;display:none;align-items:center;justify-content:center;padding:16px;z-index:5}.modal.show{display:flex}.dialog{width:min(510px,100%);background:#171e2c;border:1px solid #3a4560;border-radius:17px;padding:22px;max-height:90vh;overflow:auto;box-shadow:0 25px 80px #0009}.dialog h2{margin:0 0 5px}.dialog p{color:var(--muted);font-size:13px;margin:0 0 18px}.field{display:grid;gap:6px;margin:13px 0}.field label{font-size:12px;color:#b8c3d6;font-weight:700}.field input,.field textarea,.field select{width:100%;background:#0f1521;border:1px solid #354057;color:var(--text);border-radius:9px;padding:10px;outline:none}.field textarea{min-height:75px;resize:vertical}.actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}.detailgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice{font-size:12px;color:#8f9bb0;padding:12px;background:#121a27;border-radius:10px;margin-top:15px}.mobiletop{display:none}
+@media(max-width:850px){.app{grid-template-columns:1fr}.sidebar{position:sticky;top:0;z-index:3;padding:10px 12px;border-right:0;border-bottom:1px solid var(--line);display:block}.brand{padding:0 7px 10px}.brand .logo{width:29px;height:29px}.navlabel,.sidebar-foot{display:none}.nav{display:flex;overflow-x:auto;gap:4px}.nav button{white-space:nowrap;width:auto;padding:9px 11px;font-size:12px}.nav .ico{display:none}main{padding:23px 15px}.stats{grid-template-columns:repeat(2,1fr);gap:9px}.stat{padding:13px}.stat strong{font-size:24px}.layout{grid-template-columns:1fr}.top{align-items:flex-start}.top .primary{font-size:12px;padding:10px}.detailgrid{grid-template-columns:1fr}.rowitem{align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">R</div> RevisionFlow</div>
+ <div class="navlabel">WORKSPACE</div>
+ <nav class="nav">
+  <button class="active" data-view="dashboard"><span class="ico">▦</span>Overview</button>
+  <button data-view="projects"><span class="ico">◫</span>Projects</button>
+  <button data-view="revisions"><span class="ico">↻</span>Revisions</button>
+  <button data-view="clients"><span class="ico">♙</span>Clients</button>
+ </nav>
+ <div class="sidebar-foot">A calmer way to run creative work.<br><br>v0.1 · Local preview</div>
+</aside>
+<main>
+ <section class="top">
+  <div><div class="eyebrow">CREATIVE WORKSPACE</div><h1 id="pageTitle">Good work. Clear progress.</h1><p class="sub" id="pageSub">Your projects, revisions and approvals in one place.</p></div>
+  <button class="primary" id="quickAdd">＋ New project</button>
+ </section>
+ <section class="view active" id="dashboard">
+  <div class="stats">
+   <div class="stat"><small>Active projects</small><strong id="statProjects">0</strong><div class="hint">Currently in progress</div></div>
+   <div class="stat"><small>Open revisions</small><strong id="statRevisions">0</strong><div class="hint">Waiting to be handled</div></div>
+   <div class="stat"><small>Awaiting approval</small><strong id="statApprovals">0</strong><div class="hint">Ready for client review</div></div>
+   <div class="stat"><small>Clients</small><strong id="statClients">0</strong><div class="hint">In your workspace</div></div>
+  </div>
+  <div class="layout">
+   <div class="card"><div class="cardhead"><h2>Active projects</h2><button class="secondary" data-goto="projects">View all</button></div><div id="dashProjects"></div></div>
+   <div class="card"><div class="cardhead"><h2>Recent activity</h2><span class="pill">LIVE IN THIS BROWSER</span></div><div id="activity"></div></div>
+  </div>
+  <div class="notice">Your workspace is currently saved on this device/browser only. This preview does not yet sync with clients or other devices.</div>
+ </section>
+ <section class="view" id="projects">
+  <div class="toolbar"><input class="search" id="projectSearch" placeholder="Search projects…"><button class="primary" id="addProject">＋ New project</button></div><div class="list" id="projectList"></div>
+ </section>
+ <section class="view" id="revisions">
+  <div class="toolbar"><input class="search" id="revisionSearch" placeholder="Search revisions…"><button class="primary" id="addRevision">＋ Add revision</button></div><div class="list" id="revisionList"></div>
+ </section>
+ <section class="view" id="clients">
+  <div class="toolbar"><input class="search" id="clientSearch" placeholder="Search clients…"><button class="primary" id="addClient">＋ Add client</button></div><div class="list" id="clientList"></div>
+ </section>
+</main>
+</div>
+<div class="modal" id="modal"><div class="dialog"><h2 id="modalTitle">New project</h2><p id="modalDesc">Add a little context to get started.</p><form id="modalForm"></form></div></div>
+<script>
+const $=s=>document.querySelector(s);
+const storeKey='revisionflow_v1';
+let data=JSON.parse(localStorage.getItem(storeKey)||'null')||{projects:[],clients:[],revisions:[],activity:[]};
+function save(){localStorage.setItem(storeKey,JSON.stringify(data));render()}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function log(msg){data.activity.unshift({msg,at:new Date().toLocaleString()});data.activity=data.activity.slice(0,12)}
+function clientName(id){return data.clients.find(c=>c.id===id)?.name||'No client linked'}
+function projectName(id){return data.projects.find(p=>p.id===id)?.name||'Unassigned project'}
+function statusClass(s){return s==='Approved'||s==='Completed'?'green':s==='Needs changes'||s==='Overdue'?'red':'yellow'}
+function empty(title,desc){return `<div class="empty"><b>${title}</b>${desc}</div>`}
+function showView(name){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===name));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===name));let titles={dashboard:['Good work. Clear progress.','Your projects, revisions and approvals in one place.'],projects:['Projects','Keep every deliverable moving.'],revisions:['Revisions','Track feedback without losing the thread.'],clients:['Clients','Your creative relationships, organized.']};$('#pageTitle').textContent=titles[name][0];$('#pageSub').textContent=titles[name][1];$('#quickAdd').textContent=name==='clients'?'＋ Add client':name==='revisions'?'＋ Add revision':'＋ New project';}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>showView(b.dataset.view));
+document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showView(b.dataset.goto));
+$('#quickAdd').onclick=()=>{let v=document.querySelector('.view.active').id;if(v==='clients')clientForm();else if(v==='revisions')revisionForm();else projectForm()};
+$('#addProject').onclick=projectForm;$('#addClient').onclick=clientForm;$('#addRevision').onclick=revisionForm;
+function modal(title,desc,fields,onSave){$('#modalTitle').textContent=title;$('#modalDesc').textContent=desc;$('#modalForm').innerHTML=fields+`<div class="actions"><button type="button" class="secondary" id="cancel">Cancel</button><button class="primary" type="submit">Save</button></div>`;$('#modal').classList.add('show');$('#cancel').onclick=closeModal;$('#modalForm').onsubmit=e=>{e.preventDefault();onSave(new FormData(e.target));closeModal()}}
+function closeModal(){$('#modal').classList.remove('show')}
+$('#modal').onclick=e=>{if(e.target.id==='modal')closeModal()};
+function field(label,name,placeholder='',type='text',required=true){return `<div class="field"><label>${label}</label><input name="${name}" type="${type}" placeholder="${placeholder}" ${required?'required':''}></div>`}
+function selectField(label,name,items){return `<div class="field"><label>${label}</label><select name="${name}">${items.map(x=>`<option value="${esc(x[0])}">${esc(x[1])}</option>`).join('')}</select></div>`}
+function projectForm(){let clients=[['','No client linked'],...data.clients.map(c=>[c.id,c.name])];modal('Create a project','Set up the work and track it from brief to approval.',field('Project name','name','e.g. Instagram launch package')+selectField('Client','clientId',clients)+selectField('Status','status',[['In progress','In progress'],['Waiting for feedback','Waiting for feedback'],['Completed','Completed']])+field('Due date','due','', 'date',false)+`<div class="field"><label>Project notes</label><textarea name="notes" placeholder="Scope, deliverables, useful context…"></textarea></div>`,f=>{data.projects.unshift({id:crypto.randomUUID(),name:f.get('name'),clientId:f.get('clientId'),status:f.get('status'),due:f.get('due'),notes:f.get('notes'),created:Date.now()});log('Created project: '+f.get('name'));save()})}
+function clientForm(){modal('Add a client','Keep the basics handy. You can link them to projects.',field('Client / business name','name','e.g. Northstar Studio')+field('Email','email','name@example.com','email',false)+field('Notes','notes','Brand, preferences, contact details…','text',false),f=>{data.clients.unshift({id:crypto.randomUUID(),name:f.get('name'),email:f.get('email'),notes:f.get('notes')});log('Added client: '+f.get('name'));save()})}
+function revisionForm(){if(!data.projects.length){alert('Create a project first, then add its revision.');showView('projects');return}let ps=data.projects.map(p=>[p.id,p.name]);modal('Add a revision','Capture the requested change and keep its status visible.',selectField('Project','projectId',ps)+field('Revision request','title','e.g. Change headline and CTA')+`<div class="field"><label>Details</label><textarea name="details" placeholder="What exactly needs changing?"></textarea></div>`+selectField('Status','status',[['Open','Open'],['In progress','In progress'],['Ready for approval','Ready for approval'],['Approved','Approved']]),f=>{data.revisions.unshift({id:crypto.randomUUID(),projectId:f.get('projectId'),title:f.get('title'),details:f.get('details'),status:f.get('status'),created:Date.now()});log('Added revision: '+f.get('title'));save()})}
+function updateStatus(type,id,status){let item=data[type].find(x=>x.id===id);if(item){item.status=status;log('Updated '+(type==='revisions'?'revision':'project')+' to '+status);save()}}
+function remove(type,id){if(confirm('Delete this item? This cannot be undone.')){data[type]=data[type].filter(x=>x.id!==id);log('Deleted an item');save()}}
+function render(){let active=data.projects.filter(p=>p.status!=='Completed');let open=data.revisions.filter(r=>!['Approved'].includes(r.status));$('#statProjects').textContent=active.length;$('#statRevisions').textContent=open.length;$('#statApprovals').textContent=data.revisions.filter(r=>r.status==='Ready for approval').length;$('#statClients').textContent=data.clients.length;
+$('#dashProjects').innerHTML=active.length?active.slice(0,5).map(p=>`<div class="project"><div><div class="project-title">${esc(p.name)}</div><div class="project-meta">${esc(clientName(p.clientId))}${p.due?' · Due '+esc(p.due):''}</div><div class="progress"><span style="width:${p.status==='Waiting for feedback'?65:35}%"></span></div></div><span class="pill ${statusClass(p.status)}">${esc(p.status)}</span></div>`).join(''):empty('No projects yet','Create your first project to get moving.');
+$('#activity').innerHTML=data.activity.length?data.activity.slice(0,6).map(a=>`<div class="activity"><b>${esc(a.msg)}</b><small>${esc(a.at)}</small></div>`).join(''):empty('Nothing here yet','Your workspace activity will appear here.');
+let q=($('#projectSearch')?.value||'').toLowerCase();let ps=data.projects.filter(p=>(p.name+' '+clientName(p.clientId)).toLowerCase().includes(q));$('#projectList').innerHTML=ps.length?ps.map(p=>`<div class="rowitem"><div><h3>${esc(p.name)}</h3><p>${esc(clientName(p.clientId))}${p.due?' · Due '+esc(p.due):''}</p><p>${esc(p.notes||'No notes added')}</p></div><div style="display:flex;gap:7px;align-items:center;flex-wrap:wrap"><select aria-label="Project status" onchange="updateStatus('projects','${p.id}',this.value)" class="secondary">${['In progress','Waiting for feedback','Completed'].map(s=>`<option ${p.status===s?'selected':''}>${s}</option>`).join('')}</select><button class="danger" onclick="remove('projects','${p.id}')">Delete</button></div></div>`).join(''):empty('No matching projects','Create a project or try another search.');
+let rq=($('#revisionSearch')?.value||'').toLowerCase();let rs=data.revisions.filter(r=>(r.title+' '+projectName(r.projectId)).toLowerCase().includes(rq));$('#revisionList').innerHTML=rs.length?rs.map(r=>`<div class="rowitem"><div><h3>${esc(r.title)}</h3><p>${esc(projectName(r.projectId))} · ${esc(r.details||'No extra details')}</p></div><div style="display:flex;gap:7px;align-items:center;flex-wrap:wrap"><select aria-label="Revision status" class="secondary" onchange="updateStatus('revisions','${r.id}',this.value)">${['Open','In progress','Ready for approval','Approved','Needs changes'].map(s=>`<option ${r.status===s?'selected':''}>${s}</option>`).join('')}</select><button class="danger" onclick="remove('revisions','${r.id}')">Delete</button></div></div>`).join(''):empty('No revisions tracked','Add a revision to a project to keep feedback organized.');
+let cq=($('#clientSearch')?.value||'').toLowerCase();let cs=data.clients.filter(c=>(c.name+' '+c.email).toLowerCase().includes(cq));$('#clientList').innerHTML=cs.length?cs.map(c=>`<div class="rowitem"><div><h3>${esc(c.name)}</h3><p>${esc(c.email||'No email added')} · ${data.projects.filter(p=>p.clientId===c.id).length} project(s)</p><p>${esc(c.notes||'')}</p></div><button class="danger" onclick="remove('clients','${c.id}')">Delete</button></div>`).join(''):empty('No clients yet','Add a client before creating their project.')}
+['projectSearch','revisionSearch','clientSearch'].forEach(id=>{$('#'+id).oninput=render})}
+render();
+</script>
+</body>
+</html>
